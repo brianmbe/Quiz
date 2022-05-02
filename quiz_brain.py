@@ -1,3 +1,6 @@
+from data import question_data, qn_type
+
+
 class QuizzBrain:
     def __init__(self, qn_list):
         self.question_no = 0
@@ -10,7 +13,7 @@ class QuizzBrain:
     def next_qn(self):
         current_qn = self.question_list[self.question_no]
         self.question_no += 1
-        user_answer = input(f'Q.{self.question_no}: {current_qn.text} (True/False): ')
+        user_answer = input(f'Q.{self.question_no}: {current_qn.text} {qn_type[0]}: ')
         self.check_ans(user_answer, current_qn.answer)
 
     def check_ans(self, user_answer, correct_answer):
